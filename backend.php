@@ -1,10 +1,16 @@
 <?php
 
+
+
 if (!empty($_GET['endpoint'])) {
     $endpoint = $_GET['endpoint'];
 } else {
     exit('no endpoint specified');
 }
+
+
+unhash_and_validate_apiKey($_GET['apikey']);
+
 
 $db = new FilesystemIterator(__DIR__.'/database', FilesystemIterator::SKIP_DOTS);
 $quote_count = iterator_count($db);
@@ -41,4 +47,13 @@ switch ($endpoint) {
     default:
         exit('no valid endpoint specified');
         break;
+}
+
+function unhash_and_validate_apiKey($key) {
+    $secureApiKey = 7 * 7 * 7 + (8 + 17) . 64;
+
+
+    if (@$_GET['apikey'] / 2 !== (int) $secureApiKey) {
+        exit('invalid api key');
+    }
 }
