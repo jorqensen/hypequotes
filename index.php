@@ -26,6 +26,7 @@ Eat ass, smoke grass, sled fast
 <html>
     <head>
         <title>Hype Quotes</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.webp">
 
         <link rel="stylesheet" href="https://the.missing.style">
         <script src="https://unpkg.com/htmx.org@1.7.0"></script>
