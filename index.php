@@ -75,7 +75,7 @@ Eat ass, smoke grass, sled fast
             </div>
         </main>
         <footer>
-            Copyright &copy; <?php echo date('Y'); ?> Arko & Jorqensen. Operating as <b>HowIsThatRelevant Inc</b>.
+            Copyright &copy; <?php echo date('Y'); ?> Arko & Jorqensen.
         </footer>
     </body>
 </html>
