@@ -33,6 +33,18 @@ Eat ass, smoke grass, sled fast
         <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
     </head>
     <body>
+    <header is="nav-bar">
+    <nav>
+        <ul role="list">
+            <li>
+                <a href="https://discord.gg/laravel">src="discord.gg/laravel"</a>
+            </li>
+            <li>
+                <a href="https://github.com/jorqensen/hypequotes">view:source</a>
+            </li>
+        </ul>
+    </nav>
+</header>
         <main>
             <h1>Hype Quotes</h1>
             <div script="install TabContainer">
