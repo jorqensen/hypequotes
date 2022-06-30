@@ -13,6 +13,19 @@ best quotes from the internet
 - run `hypequotes % php -S localhost:42069 -t ./`
 - enjoy
 
+## testing
+
+run tests with
+
+- `composer install`
+
+
+
+
+- `./vendor/bin/phpunit`
+
+<p style="color: green;">success ✅</p>
+
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
 As [John Gruber] writes on the [Markdown site][df1]
