@@ -200,10 +200,11 @@ input:checked + .slider:before {
 </svg>
                 <label class="switch">
     		<input type="checkbox" _="
+                      
+             		on click toggle .durk-mode on body then
            		if $dmc exists and $dmc is not infinity
-             			on click toggle .durk-mode on body
-             			then increment $dmc 
-           		otherwise if $dmc is not infinity
+             		   	then increment $dmc 
+           		otherwise if no $dmc
              			set $dmc to 1
            		otherwise if $dmc is greater than 69 and $dmc is not Infinity
              			set $dmc to Infinity then
