@@ -1,4 +1,21 @@
 {
+    "name": "jorqensen/hypequotes",
+    "description": "pogging quotes using htmx ecosystem",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Mathias Jørgensen",
+            "email": "hello@jorqensen.dev",
+            "homepage": "https://jorqensen.dev",
+            "role": "CEO @ Shitware Ltd"
+        },
+        {
+            "name": "Arko Elsenaar",
+            "homepage": "https://www.houseofservices.nl/",
+            "role": "CTO @ Shitware Ltd"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
