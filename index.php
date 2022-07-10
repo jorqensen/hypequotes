@@ -199,7 +199,7 @@ input:checked + .slider:before {
 </g>
 </svg>
                 <label class="switch">
-                    <input type="checkbox"  onchange="toggleDorkMode(event)">
+                    <input type="checkbox" _="on click toggle .durk-mode on body">
                     <span class="slider round"></span>
                 </label>
                 <svg version="1.1" id="DrakMod" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24px" width="24px"
@@ -303,12 +303,5 @@ input:checked + .slider:before {
         <footer>
             Copyright &copy; <?php echo date('Y'); ?> Arko & Jorqensen.
         </footer>
-        <script>
-            const toggleDorkMode = (e) => {
-                e.stopPropagation()
-                console.log(this)
-                document.getElementById("body").classList.toggle("durk-mode")
-            }
-        </script>
     </body>
 </html>
