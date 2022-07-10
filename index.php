@@ -199,7 +199,17 @@ input:checked + .slider:before {
 </g>
 </svg>
                 <label class="switch">
-                    <input type="checkbox" _="on click toggle .durk-mode on body">
+    		<input type="checkbox" _="
+           		if $dmc exists and $dmc is not infinity
+             			on click toggle .durk-mode on body
+             			then increment $dmc 
+           		otherwise if $dmc is not infinity
+             			set $dmc to 1
+           		otherwise if $dmc is greater than 69 and $dmc is not Infinity
+             			set $dmc to Infinity then
+             		repeat forever toggle .durk-mode on body wait 1s end
+           		end
+             ">              
                     <span class="slider round"></span>
                 </label>
                 <svg version="1.1" id="DrakMod" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24px" width="24px"
