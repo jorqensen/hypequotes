@@ -20,6 +20,7 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
+        "serve": "php -S localhost:42069 -t ./",
         "test": "./vendor/bin/phpunit"
     }
 }
