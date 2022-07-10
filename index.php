@@ -201,12 +201,10 @@ input:checked + .slider:before {
                 <label class="switch">
     		<input type="checkbox" dmc="1" _="
                       
-             		on click toggle .durk-mode on body then
-           		if @dmc is not Infinity
-             		   	then increment @dmc 
-           		otherwise if @dmc is greater than 69 and @dmc is not Infinity
-             			set @dmc to Infinity then
-             		repeat forever toggle .durk-mode on body wait 1s end
+             		on click toggle .durk-mode on body 
+			then increment @dmc 
+           		then if @dmc is 69
+             			repeat forever toggle .durk-mode on body wait 1s end
            		end
              ">              
                     <span class="slider round"></span>
