@@ -280,7 +280,7 @@ input:checked + .slider:before {
                     </div>
 
                     <button _="on click get @id of <div#quotes>span/> then show the next <progress/> then wait 5 seconds then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quote</button>
-                    <button _="on click toggle .test on me then repeat forever if I do not match .test break end then show the next <progress/> then wait 2s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then writeText(result) into the navigator's clipboard end">Endlesslessly mode</button>
+                    <button _="on click get @id of <div#quotes>span/> toggle .test on me then repeat forever if I do not match .test break end then show the next <progress/> then wait 2s then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then writeText(result) into the navigator's clipboard end">Endlesslessly mode</button>
                     <style>
                         @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
