@@ -310,5 +310,6 @@ input:checked + .slider:before {
         <footer>
             Copyright &copy; <?php echo date('Y'); ?> Arko & Jorqensen.
         </footer>
+        <Script type="module" src="assets/blonkchain.js"></Script>
     </body>
 </html>
