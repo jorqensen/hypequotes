@@ -37,8 +37,9 @@ switch ($endpoint) {
 
         $author = trim($_POST['field']);
         $quote = trim($_POST['field2']);
+        $url = trim(filter_var($_POST['field3'], FILTER_SANITIZE_URL));
 
-        $body = "<blockquote>$quote</blockquote><figcaption>-$author</figcaption>";
+        $body = "<blockquote>$quote</blockquote><figcaption><a href=\"$url\" target=\"_blank\">-$author</a></figcaption>";
         $next_quote_no = $quote_count + 1;
 
         file_put_contents(__DIR__.'/bank/quote'.$next_quote_no.'.mark', $body);
