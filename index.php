@@ -278,7 +278,7 @@ input:checked + .slider:before {
                     <div id="quotes">
 
                     </div>
-                    <button _="on click show the next <progress/> then wait 5s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quotes</button>
+                    <button _="on click show the next <progress/> then wait 5s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quote</button>
                     <progress style="display: none;float:right;"></progress>
                 </div>
                 <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden=""><p>This is the content for the second tab</p></div>
