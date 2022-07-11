@@ -268,6 +268,7 @@ input:checked + .slider:before {
 </header>
         <main>
             <h1>Hype Quotes</h1>
+            <div id="gen-img"></div>
             <div script="install TabContainer">
 
                 <div role="tablist">
@@ -278,7 +279,8 @@ input:checked + .slider:before {
                     <div id="quotes">
 
                     </div>
-                    <button _="on click show the next <progress/> then wait 5s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quote</button>
+                    <button _="on click show the next <progress/> then wait 3s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then wait 1s then hide the <progress/> then show the next <button/>">Load quote</button>
+                    <button style="display: none;" _="on click show the next <progress/> then wait 4s then get <div#quotes/> then fetch `./backend.php?endpoint=img&apikey=73728&html=${ result.innerHTML[0]}` then put the result into the previous <div/> then hide then wait 1s then hide the <progress/>">Generate image</button>
                     <progress style="display: none;float:right;"></progress>
                 </div>
                 <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden=""><p>This is the content for the second tab</p></div>
