@@ -5,6 +5,7 @@
 if (!empty($_GET['endpoint'])) {
     $endpoint = $_GET['endpoint'];
 } else {
+    http_response_code(400);
     exit('no endpoint specified');
 }
 
@@ -21,7 +22,7 @@ switch ($endpoint) {
             exit;
         }
         $random_quote = rand(1, iterator_count($bank));
-        http_response_code(418);
+        http_response_code(200);
         echo file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark');
         break;
 
@@ -41,10 +42,11 @@ switch ($endpoint) {
         $next_quote_no = $quote_count + 1;
 
         file_put_contents(__DIR__.'/bank/quote'.$next_quote_no.'.mark', $body);
-        http_response_code(418);
+        http_response_code(201);
         break;
     
     default:
+        http_response_code(404);
         exit('no valid endpoint specified');
         break;
 }
