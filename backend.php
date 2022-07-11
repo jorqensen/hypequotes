@@ -20,9 +20,10 @@ switch ($endpoint) {
         if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
             exit;
         }
-        $random_quote = rand(1, iterator_count($bank));
+
+        while(in_array($random_quote = random_int(1, iterator_count($bank)), [$_GET['quoteid']]));
         http_response_code(418);
-        echo file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark');
+        echo "<span id={$random_quote}>" . file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark') . "</div>";
         break;
 
     case 'getquote':
@@ -36,14 +37,15 @@ switch ($endpoint) {
 
         $author = trim($_POST['field']);
         $quote = trim($_POST['field2']);
+        $url = trim(filter_var($_POST['field3'], FILTER_SANITIZE_URL));
 
-        $body = "<blockquote>$quote</blockquote><figcaption>-$author</figcaption>";
+        $body = "<blockquote>$quote</blockquote><figcaption><a href=\"$url\" target=\"_blank\">-$author</a></figcaption>";
         $next_quote_no = $quote_count + 1;
 
         file_put_contents(__DIR__.'/bank/quote'.$next_quote_no.'.mark', $body);
         http_response_code(418);
         break;
-    
+
     default:
         exit('no valid endpoint specified');
         break;
