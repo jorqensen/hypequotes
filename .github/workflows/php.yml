@@ -1,4 +1,4 @@
-name: :D
+name: PHPUnit Testing
 
 on:
   push:
@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  test:
+    name: Run tests
     runs-on: ubuntu-latest
 
     steps:
