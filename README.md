@@ -5,15 +5,15 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-best quotes from the internet
+Best quotes from the internet
 
-## installation
+## totes installation
 
 - clone this
 - run `hypequotes % php -S localhost:42069 -t ./`
 - enjoy
 
-## testing
+## testing, fam
 
 run tests with
 
