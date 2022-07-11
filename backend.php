@@ -20,9 +20,10 @@ switch ($endpoint) {
         if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
             exit;
         }
-        $random_quote = rand(1, iterator_count($bank));
+
+        while(in_array($random_quote = random_int(1, iterator_count($bank)), [$_GET['quoteid']]));
         http_response_code(418);
-        echo file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark');
+        echo "<span id={$random_quote}>" . file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark') . "</div>";
         break;
 
     case 'getquote':
