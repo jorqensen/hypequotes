@@ -278,7 +278,7 @@ input:checked + .slider:before {
                     <div id="quotes">
 
                     </div>
-                    <button _="on click show the next <progress/> then wait 0s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then writeText(result) into the navigator's clipboard then wait 0s then hide the <progress/>">Load quotes</button>
+                    <button _="on click show the next <progress/> then wait 5s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then writeText(result) into the navigator's clipboard then wait 1s then hide the <progress/>">Load quotes</button>
                     <button x="true" _="on click toggle .test on me then repeat forever if I do not match .test break end then show the next <progress/> then wait 2s then fetch ./backend.php?endpoint=postquote&apikey=73728 then put the result into the previous <div/> then writeText(result) into the navigator's clipboard end">Endlesslessly mode</button>
                     <style>
                         @-webkit-keyframes rotating /* Safari and Chrome */ {
