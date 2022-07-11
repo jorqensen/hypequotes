@@ -278,7 +278,48 @@ input:checked + .slider:before {
                     <div id="quotes">
 
                     </div>
+
                     <button _="on click get @id of <div#quotes>span/> then show the next <progress/> then wait 5 seconds then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quote</button>
+                    <button _="on click get @id of <div#quotes>span/> toggle .test on me then repeat forever if I do not match .test break end then show the next <progress/> then wait 2s then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then writeText(result) into the navigator's clipboard end">Endlesslessly mode</button>
+                    <style>
+                        @-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.test {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+} 
+/* i did NOT copy this from https://stackoverflow.com/questions/6410730/css-endless-rotation-animation they copied it from me */
+                    </style>
+
 
                     <progress style="display: none;float:right;"></progress>
                 </div>
