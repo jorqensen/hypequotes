@@ -298,6 +298,9 @@ input:checked + .slider:before {
     </p><p>
     <label for="blockinput2">My other input</label>
     <textarea name="field2"></textarea>
+    </p><p>
+    <label for="blockinput3">My otherer input</label>
+    <input name="field3" type="url" placeholder="https://discord.com/channels/297040613688475649/486650660520067087/995802572730413116">
 </p>
 
 <button type="submit" >submit</button>
