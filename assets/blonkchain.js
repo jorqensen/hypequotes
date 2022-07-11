@@ -1,5 +1,3 @@
-import jQuery from './assets/assets/assets/jquery.min.js';
-
 //Load in current blonkchain
 function BlonkChain(blonkChain) {
   this.blonkChain = blonkChain;
