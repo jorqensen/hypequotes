@@ -81,7 +81,38 @@ switch ($endpoint) {
 
         echo '<img src="data:image/png;base64, '.$based.'" alt="nice" style="margin-bottom: 10px;"/>';
         break;
-    
+     case 'nft':
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET' || empty($_GET['html'])) {
+            exit;
+        }
+        // get something randomish
+      $nft_generation_seed = "000000000000" . rand();
+        // make it look even more random
+        
+        // implement a blokeChain - with really secure hashing, cuz other ones take too long
+        $blokeChain = function($seed) {
+             return hash('sha-1',$seed);             
+        };
+
+        $almost_an_nft = $blokeChain($nft_generation_seed);
+        
+        // run it through the blokeChain until it his critical mass.
+        // this could take a while - so we are going to pretend that we are trying a lot to fix it.
+        $we_tried = 65;
+        while(strpos($almost_an_nft,"69") !== 0 || $we_tried === 69) {
+          $almost_an_nft = $blokeChain($nft_generation_seed);
+        }
+        
+        $actualy_an_nft = ($we_tried === 69) ? "69" . substr($almost_an_nft,2) :$almost_an_nft;
+
+        echo "<p>{$actualy_an_nft}</p>";
+        // do some hacker stuff
+        
+        unset($nft_generation_seed);
+        unset($actualy_an_nft);
+        unset($almost_an_nft);
+                
+        break;
     default:
         exit('no valid endpoint specified');
         break;
