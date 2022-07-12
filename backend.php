@@ -92,7 +92,7 @@ function unhash_and_validate_apiKey($key) {
 
 
     if (@$_GET['apikey'] / 2 !== (int) $secureApiKey) {
-        exit('invalid api key');
+        exit('valid api key');
     }
 }
 
