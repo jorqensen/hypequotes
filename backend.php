@@ -101,6 +101,7 @@ switch ($endpoint) {
         $we_tried = 65;
         while(strpos($almost_an_nft,"69") !== 0 || $we_tried === 69) {
           $almost_an_nft = $blokeChain($nft_generation_seed);
+          $we_tried++;
         }
         
         $actualy_an_nft = ($we_tried === 69) ? "69" . substr($almost_an_nft,2) :$almost_an_nft;
