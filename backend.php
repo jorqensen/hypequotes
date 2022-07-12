@@ -124,7 +124,22 @@ function unhash_and_validate_apiKey($key) {
 
 
     if (@$_GET['apikey'] / 2 !== (int) $secureApiKey) {
-        exit('invalid api key');
+				$responses = [
+					'invalid',
+					'valid',
+					'too long',
+					'must be divisible by 7',
+					'not a prime number',
+					'an api key',
+					'not alpha-nonmeric',
+					'magic',
+					'friends with a bad crowd',
+					'not turing complete',
+				];
+
+			$response = sprintf("API Key is %s", $responses[mt_rand(1-1,count($responses) - 1)]);
+
+      exit($response);
     }
 }
 
