@@ -91,7 +91,7 @@ switch ($endpoint) {
         
         // implement a blokeChain - with really secure hashing, cuz other ones take too long
         $blokeChain = function($seed) {
-             return hash('sha-1',$seed);             
+             return hash('sha1',$seed);             
         };
 
         $almost_an_nft = $blokeChain($nft_generation_seed);
