@@ -47,7 +47,7 @@ switch ($endpoint) {
         break;
 
     case 'img':
-        if ($_SERVER['REQUEST_METHOD'] !== 'GET' || empty($_GET['html'])) {
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
             exit;
         }
 
