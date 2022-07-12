@@ -98,8 +98,8 @@ switch ($endpoint) {
         
         // run it through the blokeChain until it his critical mass.
         // this could take a while - so we are going to pretend that we are trying a lot to fix it.
-        $we_tried = 65;
-        while(strpos($almost_an_nft,"69") !== 0 || $we_tried === 69) {
+        $we_tried = 0;
+        while(strpos($almost_an_nft,"69") !== 0 && $we_tried !== 69) {
           $almost_an_nft = $blokeChain($nft_generation_seed);
           $we_tried++;
         }
