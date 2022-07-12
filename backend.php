@@ -1,6 +1,6 @@
 <?php
 
-
+use PHPUnit\Runner\BeforeTestHook;
 
 if (!empty($_GET['endpoint'])) {
     $endpoint = $_GET['endpoint'];
@@ -46,6 +46,42 @@ switch ($endpoint) {
         http_response_code(418);
         break;
 
+    case 'img':
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET' || empty($_GET['html'])) {
+            exit;
+        }
+
+        $images = scandir(__DIR__ . '/assets/backdrops');
+        unset($images[0]);
+        unset($images[1]);
+        $contents = $_GET['html'];
+        $quote = string_between_two_string($contents, "<blockquote>", "</blockquote>");
+        $author = string_between_two_string($contents, "<figcaption>", "</figcaption>");
+
+
+        $quote = wordwrap($quote, 50);
+        $imgPath = __DIR__ . '/assets/backdrops/' . $images[array_rand($images)];
+        $image = imagecreatefromstring(file_get_contents($imgPath));
+        $fontPath = __DIR__ . '/assets/COMIC.TTF';
+        $color = imagecolorallocate($image, 255, 255, 255);
+        $border = imagecolorallocate($image, 0, 0, 0);
+        $quoted = $quote . "\n\n" . $author;
+        $size=50;
+        $angle=0;
+        $left=125;
+        $top=200;
+        imagettftext($image, $size,$angle,$left+5,$top+5, $border, $fontPath, $quoted);
+        imagettftext($image, $size,$angle,$left,$top, $color, $fontPath, $quoted);
+        ob_start();
+        $image = imagepng($image);
+        $image_data = ob_get_contents();
+        ob_end_clean();
+
+        $based = base64_encode($image_data);
+
+        echo '<img src="data:image/png;base64, '.$based.'" alt="nice" style="margin-bottom: 10px;"/>';
+        break;
+    
     default:
         exit('no valid endpoint specified');
         break;
@@ -58,4 +94,16 @@ function unhash_and_validate_apiKey($key) {
     if (@$_GET['apikey'] / 2 !== (int) $secureApiKey) {
         exit('invalid api key');
     }
+}
+
+function string_between_two_string($str, $starting_word, $ending_word)
+{
+    $subtring_start = strpos($str, $starting_word);
+    //Adding the starting index of the starting word to
+    //its length would give its ending index
+    $subtring_start += strlen($starting_word); 
+    //Length of our required sub string
+    $size = strpos($str, $ending_word, $subtring_start) - $subtring_start; 
+    // Return the substring from the index substring_start of length size
+    return substr($str, $subtring_start, $size); 
 }

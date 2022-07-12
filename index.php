@@ -129,7 +129,6 @@ input:checked + .slider:before {
             <svg version="1.1" id="NotDrakMod" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="24px" height="24px" viewBox="0 0 478.583 478.584" style="enable-background:new 0 0 478.583 478.584;"
 	 xml:space="preserve" title="Light Mode">
-<g>
 	<g>
 		<path d="M361.292,186.499c-23.212-39.083-62.383-54.142-105.693-44.476c-15.962,3.562-9.201,28.033,6.749,24.471
 			c41.492-9.262,73.925,14.81,86.98,54.172c9.928,29.922-5.027,60.491-25.375,81.859c-39.826,41.833-106.886,45.402-149.239,6.221
@@ -166,37 +165,6 @@ input:checked + .slider:before {
 			c0.005,7.586,5.108,15.277,14.863,15.277h0.005c5.226,0,31.747-0.073,40.929-1.29c9.069-1.206,14.935-7.196,14.935-15.262
 			C462.715,212.717,455.606,203.83,447.095,205.006z"/>
 	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
 </svg>
                 <label class="switch">
     		<input type="checkbox" dmc="1" _="
@@ -231,36 +199,6 @@ input:checked + .slider:before {
 		c-3.778-0.272-7.379-1.024-10.704-2.234l-0.002-0.001c-3.371-1.226-6.324-2.894-8.809-4.911l26.86-11.91l0,0l1.054-0.467
 		c9.432,0.969,17.403,4.942,22.062,10.842C181.648,89.615,173.684,92.666,165.375,93.507z"/>
 </g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
 </svg>
             </li>
         </ul>
@@ -268,6 +206,7 @@ input:checked + .slider:before {
 </header>
         <main>
             <h1>Hype Quotes</h1>
+            <div id="gen-img"></div>
             <div script="install TabContainer">
 
                 <div role="tablist">
@@ -278,7 +217,48 @@ input:checked + .slider:before {
                     <div id="quotes">
 
                     </div>
-                    <button _="on click get @id of <div#quotes>span/> then show the next <progress/> then wait 5 seconds then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then wait 1s then hide the <progress/>">Load quote</button>
+                    <button _="on click get @id of <div#quotes>span/> then show the next <progress/> then wait 3 seconds then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then wait 1s then hide the <progress/> then show the next <button/>">Load quote</button>
+                    <button style="display: none;" _="on click show the next <progress/> then wait 4s then get <div#quotes/> then fetch `./backend.php?endpoint=img&apikey=73728&html=${ result.innerHTML[0]}` then put the result into the previous <div/> then hide then wait 1s then hide the <progress/>">Generate image</button>
+                    <button _="on click get @id of <div#quotes>span/> toggle .test on me then repeat forever if I do not match .test break end then show the next <progress/> then wait 2s then fetch `./backend.php?endpoint=postquote&apikey=73728&quoteid=${result[0]}` then put the result into the previous <div/> then writeText(result) into the navigator's clipboard end">Endlesslessly mode</button>
+                    <style>
+                        @-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.test {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+} 
+/* i did NOT copy this from https://stackoverflow.com/questions/6410730/css-endless-rotation-animation they copied it from me */
+                    </style>
+
 
                     <progress style="display: none;float:right;"></progress>
                 </div>
