@@ -208,7 +208,7 @@ input:checked + .slider:before {
             <h1>Hype Quotes</h1>
             <div id="gen-img"></div>
             <div style="display: flex;">
-              <label for="attempt-to-pick-color">Pick your Hype Quotes Color:</label>
+              <label for="attempt-to-pick-color">Pick your Hype Quotes Color &#129416;:</label>
               <script>
                 function changeColorToExactlyWhatTheUserSelected() {
                   let red = Math.floor(Math.random() * 256),
