@@ -307,5 +307,46 @@ input:checked + .slider:before {
         <footer>
             Copyright &copy; <?php echo date('Y'); ?> Shitware Ltd
         </footer>
+        <div class="zo" id="om"></div>
+        <script>
+          let clone = document.getElementById("body").cloneNode(true);
+          console.log(clone)
+          let circle = document.getElementById('om');
+          circle.appendChild(clone);
+          clone.style.width = window.outerWidth;
+          clone.style.height = window.outerHeight;
+
+          const onMouseMove = (e) =>{
+            circle.style.left = e.pageX + 'px';
+            circle.style.top = e.pageY + 'px';
+
+            clone.style.marginLeft = e.pageX * -1 + 'px';
+            clone.style.marginTop = e.pageY * -1 + 'px';
+
+            console.log(clone.offsetWidth)
+          }
+          document.addEventListener('mousemove', onMouseMove);
+        </script>
+        <style>
+          .zo#om {
+  position:absolute;
+  transform:translate(-50%,-50%);
+  height:150px;
+  width:150px;
+  left: -150px;
+  top: -150px;
+  
+  border-radius:50%;
+  border:2px solid black;
+  overflow: hidden;
+}
+
+.zo#om body {
+  background: white;
+  zoom: 200%;
+  position: absolute;
+}
+
+        </style>
     </body>
 </html>
