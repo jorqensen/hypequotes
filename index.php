@@ -305,7 +305,7 @@ input:checked + .slider:before {
             </div>
         </main>
         <footer>
-            Copyright &copy; <?php echo date('Y'); ?> Arko & Jorqensen.
+            Copyright &copy; <?php echo date('Y'); ?> Shitware Ltd
         </footer>
     </body>
 </html>
