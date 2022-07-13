@@ -317,7 +317,6 @@ input:checked + .slider:before {
           clone.style.width = window.outerWidth;
           clone.style.height = window.outerHeight;
           clone.querySelector(".zo#om").remove();
-          clone.querySelector("script").remove();
 
           const onMouseMove = (e) =>{
             circle.style.left = e.pageX + 'px';
@@ -342,9 +341,9 @@ input:checked + .slider:before {
         };
           document.addEventListener('mousemove', onMouseMove);
 
-          circle.addEventListener('click', () => {
-            document.getElementById('om').classList.remove('oooooo')
-          })
+          // circle.addEventListener('click', () => {
+          //   document.getElementById('om').classList.remove('oooooo')
+          // })
         </script>
         <style>
           .zo#om {
