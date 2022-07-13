@@ -201,6 +201,7 @@ input:checked + .slider:before {
 </g>
 </svg>
             </li>
+            <li><button _="on click add .oooooo to #om">ZOOM</button></li>
         </ul>
     </nav>
 </header>
@@ -315,6 +316,8 @@ input:checked + .slider:before {
           circle.appendChild(clone);
           clone.style.width = window.outerWidth;
           clone.style.height = window.outerHeight;
+          clone.querySelector(".zo#om").remove();
+          clone.querySelector("script").remove();
 
           const onMouseMove = (e) =>{
             circle.style.left = e.pageX + 'px';
@@ -325,7 +328,23 @@ input:checked + .slider:before {
 
             console.log(clone.offsetWidth)
           }
+          document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            var isEscape = false;
+            if ("key" in evt) {
+                isEscape = (evt.key === "Escape" || evt.key === "Esc");
+            } else {
+                isEscape = (evt.keyCode === 27);
+            }
+            if (isEscape) {
+              document.getElementById('om').classList.remove('oooooo')
+            }
+        };
           document.addEventListener('mousemove', onMouseMove);
+
+          circle.addEventListener('click', () => {
+            document.getElementById('om').classList.remove('oooooo')
+          })
         </script>
         <style>
           .zo#om {
@@ -335,10 +354,15 @@ input:checked + .slider:before {
   width:150px;
   left: -150px;
   top: -150px;
+  display:none;
   
   border-radius:50%;
   border:2px solid black;
   overflow: hidden;
+}
+
+.zo.oooooo#om {
+  display: block;
 }
 
 .zo#om body {
