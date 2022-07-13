@@ -317,6 +317,11 @@ input:checked + .slider:before {
           clone.style.width = window.outerWidth;
           clone.style.height = window.outerHeight;
           clone.querySelector(".zo#om").remove();
+          clone.style.backgroundImage = "url('./yes.png')";
+          clone.style.backgroundSize = "100px";
+          clone.style.backgroundRepeat = "no-repeat";
+          clone.style.backgroundPosition = "top 100px left 100px";
+
 
           const onMouseMove = (e) =>{
             circle.style.left = e.pageX + 'px';
