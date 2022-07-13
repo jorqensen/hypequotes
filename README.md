@@ -3,7 +3,7 @@
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![PHPUnit Testing](https://github.com/jorqensen/hypequotes/actions/workflows/php.yml/badge.svg)](https://github.com/jorqensen/hypequotes/actions/workflows/php.yml)
 
 Best quotes from the internet
 
