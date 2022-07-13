@@ -207,6 +207,19 @@ input:checked + .slider:before {
         <main>
             <h1>Hype Quotes</h1>
             <div id="gen-img"></div>
+            <div style="display: flex;">
+              <label for="attempt-to-pick-color">Pick your Hype Quotes Color &#129416;:</label>
+              <script>
+                function changeColorToExactlyWhatTheUserSelected() {
+                  let red = Math.floor(Math.random() * 256),
+                  green = Math.floor(Math.random() * 256),
+                  blue = Math.floor(Math.random() * 256)
+
+                  document.documentElement.style.setProperty('--colorful-bg', `rgb(${green} ${blue} ${red})`)
+                }
+              </script>
+              <input type="color" name="attempt-to-pick-color" id="attempt-to-pick-color" style="margin-left: 1rem;" _="on change changeColorToExactlyWhatTheUserSelected()">
+            </div>
             <div script="install TabContainer">
 
                 <div role="tablist">
