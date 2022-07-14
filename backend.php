@@ -46,6 +46,29 @@ switch ($endpoint) {
         http_response_code(418);
         break;
 
+    case "quoties":
+        $_GET['quoteid'] = random_int(1, iterator_count($bank));
+        $quote = file_get_contents(__DIR__.'/bank/quote'.$_GET['quoteid'].'.mark');
+        while(in_array($random_quote = random_int(1, iterator_count($bank)), [$_GET['quoteid']]));
+        $quote2 = file_get_contents(__DIR__.'/bank/quote'.$random_quote.'.mark');
+        http_response_code(418);
+        $colors = [];
+        for ($i = 0; $i < 3; $i++) { $colors[] = random_int(1, 255); }
+        $rgb = join(',', $colors);
+        echo "<h3 style='text-align:center;'>CLICK QUOTE TO CAST VOTE</h3>";
+        echo "<style>#votecontainer a { transition: 2s opacity; width: 50%; float: left; display: block; } #votecontainer a:hover { background:rgb($rgb); }</style>";
+        echo "<style>#votecontainer a.fadeout { opacity: 0; }</style>";
+        $quotes = [ $_GET['quoteid'] => $quote, $random_quote => $quote2 ];
+        $count = 1;
+        foreach ($quotes as $quote_id => $quote) {
+            if ($count == 1) $otherelement = 'the next <a/>';
+            else $otherelement = 'the previous <a/>';
+            echo "<a href='javascript:void()' _='on click add .fadeout to $otherelement then wait 2s then trigger click on #tab-2' id={$quote_id}>" . $quote . "</a>";
+            $count++;
+        }
+        echo "<div style='clear:both'></div>";
+        break;
+
     case 'img':
         if ($_SERVER['REQUEST_METHOD'] !== 'GET' || empty($_GET['html'])) {
             exit;
