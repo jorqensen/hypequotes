@@ -346,9 +346,9 @@ input:checked + .slider:before {
         };
           document.addEventListener('mousemove', onMouseMove);
 
-          // circle.addEventListener('click', () => {
-          //   document.getElementById('om').classList.remove('oooooo')
-          // })
+          circle.addEventListener('contextmenu', () => {
+             document.getElementById('om').classList.remove('oooooo')
+          })
         </script>
         <style>
           .zo#om {
