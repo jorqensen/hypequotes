@@ -271,6 +271,7 @@ end
 </g>
 </svg>
             </li>
+            <li><button _="on click add .oooooo to #om">ZOOM</button></li>
         </ul>
     </nav>
 </header>
@@ -386,5 +387,73 @@ end
         <footer>
             Copyright &copy; <?php echo date('Y'); ?> Shitware Ltd
         </footer>
+        <div class="zo" id="om"></div>
+        <script>
+          let clone = document.getElementById("body").cloneNode(true);
+          console.log(clone)
+          let circle = document.getElementById('om');
+          circle.appendChild(clone);
+          clone.style.width = window.outerWidth;
+          clone.style.height = window.outerHeight;
+          clone.querySelector(".zo#om").remove();
+          clone.style.backgroundImage = "url('./yes.png')";
+          clone.style.backgroundSize = "100px";
+          clone.style.backgroundRepeat = "no-repeat";
+          clone.style.backgroundPosition = "top 100px left 100px";
+
+
+          const onMouseMove = (e) =>{
+            circle.style.left = e.pageX + 'px';
+            circle.style.top = e.pageY + 'px';
+
+            clone.style.marginLeft = e.pageX * -1 + 'px';
+            clone.style.marginTop = e.pageY * -1 + 'px';
+
+            console.log(clone.offsetWidth)
+          }
+          document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            var isEscape = false;
+            if ("key" in evt) {
+                isEscape = (evt.key === "Escape" || evt.key === "Esc");
+            } else {
+                isEscape = (evt.keyCode === 27);
+            }
+            if (isEscape) {
+              document.getElementById('om').classList.remove('oooooo')
+            }
+        };
+          document.addEventListener('mousemove', onMouseMove);
+
+          // circle.addEventListener('click', () => {
+          //   document.getElementById('om').classList.remove('oooooo')
+          // })
+        </script>
+        <style>
+          .zo#om {
+  position:absolute;
+  transform:translate(-50%,-50%);
+  height:150px;
+  width:150px;
+  left: -150px;
+  top: -150px;
+  display:none;
+  
+  border-radius:50%;
+  border:2px solid black;
+  overflow: hidden;
+}
+
+.zo.oooooo#om {
+  display: block;
+}
+
+.zo#om body {
+  background: white;
+  zoom: 200%;
+  position: absolute;
+}
+
+        </style>
     </body>
 </html>
