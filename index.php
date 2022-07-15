@@ -209,9 +209,9 @@ input:checked + .slider:before {
             <h1>Hype Quotes</h1>
             <div id="gen-img"></div>
             <div style="display: flex;">
-              <label for="attempt-to-pick-color">Pick your Hype Quotes Color &#129416;:</label>
+              <label for="ai-color-picker">AI Color Picker™ 🦈:</label>
               <script>
-                function changeColorToExactlyWhatTheUserSelected() {
+                function useAItoPickTheSameColorAsTheUserInput() {
                   let red = Math.floor(Math.random() * 256),
                   green = Math.floor(Math.random() * 256),
                   blue = Math.floor(Math.random() * 256)
@@ -219,7 +219,7 @@ input:checked + .slider:before {
                   document.documentElement.style.setProperty('--colorful-bg', `rgb(${green} ${blue} ${red})`)
                 }
               </script>
-              <input type="color" name="attempt-to-pick-color" id="attempt-to-pick-color" style="margin-left: 1rem;" _="on change changeColorToExactlyWhatTheUserSelected()">
+              <input type="color" name="ai-color-picker" id="ai-color-picker" style="margin-left: 1rem;" _="on change useAItoPickTheSameColorAsTheUserInput()">
             </div>
             <div script="install TabContainer">
 
