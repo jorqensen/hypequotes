@@ -81,7 +81,7 @@ switch ($endpoint) {
 
         echo '<img src="data:image/png;base64, '.$based.'" alt="nice" style="margin-bottom: 10px;"/>';
         break;
-    
+
     default:
         exit('no valid endpoint specified');
         break;
@@ -92,20 +92,20 @@ function unhash_and_validate_apiKey($key) {
 
 
     if (@$_GET['apikey'] / 2 !== (int) $secureApiKey) {
-				$responses = [
-					'invalid',
-					'valid',
-					'too long',
-					'must be divisible by 7',
-					'not a prime number',
-					'an api key',
-					'not alpha-nonmeric',
-					'magic',
-					'friends with a bad crowd',
-					'not turing complete',
-				];
+                $responses = [
+                    'invalid',
+                    'valid',
+                    'too long',
+                    'must be divisible by 7',
+                    'not a prime number',
+                    'an api key',
+                    'not alpha-nonmeric',
+                    'magic',
+                    'friends with a bad crowd',
+                    'not turing complete',
+                ];
 
-			$response = sprintf("API Key is %s", $responses[mt_rand(1-1,count($responses) - 1)]);
+            $response = sprintf("API Key is %s", $responses[mt_rand(1-1,count($responses) - 1)]);
 
       exit($response);
     }
@@ -116,9 +116,9 @@ function string_between_two_string($str, $starting_word, $ending_word)
     $subtring_start = strpos($str, $starting_word);
     //Adding the starting index of the starting word to
     //its length would give its ending index
-    $subtring_start += strlen($starting_word); 
+    $subtring_start += strlen($starting_word);
     //Length of our required sub string
-    $size = strpos($str, $ending_word, $subtring_start) - $subtring_start; 
+    $size = strpos($str, $ending_word, $subtring_start) - $subtring_start;
     // Return the substring from the index substring_start of length size
-    return substr($str, $subtring_start, $size); 
+    return substr($str, $subtring_start, $size);
 }
