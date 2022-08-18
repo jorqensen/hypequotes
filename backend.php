@@ -56,7 +56,7 @@ switch ($endpoint) {
         unset($images[1]);
         $contents = $_GET['html'];
         $quote = string_between_two_string($contents, "<blockquote>", "</blockquote>");
-        $author = string_between_two_string($contents, "<figcaption>", "</figcaption>");
+        $author =  strip_tags(string_between_two_string($contents, "<figcaption>", "</figcaption>"));
 
 
         $quote = wordwrap($quote, 50);
